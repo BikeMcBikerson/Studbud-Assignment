@@ -16,6 +16,7 @@
   "license": "ISC",
   "homepage": "https://github.com/BikeMcBikerson/Studbud-Assignment#readme",
   "dependencies": {
+    "bootstrap": "^5.2.0-beta1",
     "express": "^4.17.3",
     "sass": "^1.51.0"
   },

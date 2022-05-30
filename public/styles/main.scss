@@ -1,0 +1,157 @@
+/** Open Sans from Google Fonts**/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+/**Main Colors **/
+$dark-color: #2d3142;
+$hover-color: #63656e6a;
+$active-color: #16171a67;
+$light-color: #F2FDFF;
+
+/**Secondary Colors **/
+$secondary-color: #00cbc9;
+$container-color: #d4e6ea;
+$high-priority-color: hsl(0, 91%, 46%);
+$med-priority-color: hsl(51, 92%, 71%);
+$low-priority-color: hsl(143, 32%, 61%);
+
+/** Font Sizes **/
+$icon-font-size-desktop: xx-large;
+$heading-font-size-desktop: large;
+
+/** 
+Equal Spacing for:
+  - nav { width: }
+  - main { margin-left: }
+**/
+$sidebar-spacing-value: 100px;
+
+/** General Spacing**/
+* {
+  margin: 0;
+}
+
+a:visited, a:link { 
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  font-family: 'Open Sans', sans-serif;
+  background-color: $light-color;
+  color: $dark-color;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+section {
+  display: flex;
+  min-width: 90vw;
+}
+
+/** Nav Sidebar **/
+nav {
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  justify-content: space-between;
+
+  height: 100vh;
+  width: $sidebar-spacing-value;
+  background-color: $dark-color;
+  color: $light-color;
+}
+
+nav > div {
+  display: inherit; 
+  flex-direction: inherit;
+  align-items: inherit;
+}
+
+#logo {
+  max-width: 70px;
+  margin: 10px;
+}
+
+
+#nav-items {
+  font-size: $icon-font-size-desktop;
+  margin-bottom: 20px; //for spacing, so not cramped at the bottom
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+
+  transition: all 80ms ease-in 
+}
+
+.nav-item:hover {
+  cursor: pointer;
+  background-color: $hover-color;
+
+  margin: 0px;
+  padding: 20px;
+  border-radius: 10%;
+}
+
+.nav-item:active {
+  cursor: pointer;
+  color: $secondary-color;
+  background-color: $active-color;
+
+  margin: 0px;
+  padding: 20px;
+}
+
+/** Main Body **/
+main {
+  margin-left: $sidebar-spacing-value;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-style {
+  margin: 5px 10px;
+  padding: 50px;
+  border-radius: 15px;
+
+  background: $container-color;
+}
+
+h1 {
+  font-size: 120pts;
+}
+
+/** Tasklist **/
+
+//!important is used so Bootstrap colors conform to the theme of the Website
+.row {
+  padding: 10px 0px;
+}
+
+.btn-primary {
+  background-color: $secondary-color !important; 
+  border-color: $secondary-color !important;
+}
+
+.btn-high-priority {
+  background-color: $high-priority-color;
+  border-color: $high-priority-color;
+}
+
+.btn-med-priority {
+  background-color: $med-priority-color;
+  border-color: $med-priority-color;
+}
+
+.btn-low-priority {
+  background-color: $low-priority-color;
+  border-color: $low-priority-color;
+}
