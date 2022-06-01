@@ -3,20 +3,23 @@
 
 /**Main Colors **/
 $dark-color: #2d3142;
-$hover-color: #63656e6a;
-$active-color: #16171a67;
-$light-color: #F2FDFF;
+$hover-color: hsla(0, 0%, 100%, 5%);
+$active-color: hsla(0, 0%, 10%, 5%);
+$bg-color: #d9e3f0;
+$light-color: #f1f7ff;
 
 /**Secondary Colors **/
-$secondary-color: #00cbc9;
-$container-color: #d4e6ea;
-$high-priority-color: hsl(0, 91%, 46%);
-$med-priority-color: hsl(51, 92%, 71%);
-$low-priority-color: hsl(143, 32%, 61%);
+$primary-color: #0d6efd;
+$secondary-color: #ebc52b;
+
+/**Miscellaneous Colors **/
+/**mainly for reference when used in main.js **/
+$red-color: #ee4463;
+$yellow-color: #FED148;
+$green-color: #33d4a4;
 
 /** Font Sizes **/
 $icon-font-size-desktop: xx-large;
-$heading-font-size-desktop: large;
 
 /** 
 Equal Spacing for:
@@ -25,7 +28,8 @@ Equal Spacing for:
 **/
 $sidebar-spacing-value: 100px;
 
-/** General Spacing**/
+/** General Settings**/
+
 * {
   margin: 0;
 }
@@ -40,7 +44,7 @@ body {
   display: flex;
   flex-direction: row;
   font-family: 'Open Sans', sans-serif;
-  background-color: $light-color;
+  background-color: $bg-color;
   color: $dark-color;
 
   width: 100vw;
@@ -50,6 +54,10 @@ body {
 section {
   display: flex;
   min-width: 90vw;
+}
+
+.btn {
+  font-weight: 600;
 }
 
 /** Nav Sidebar **/
@@ -62,7 +70,7 @@ nav {
 
   height: 100vh;
   width: $sidebar-spacing-value;
-  background-color: $dark-color;
+  background-color: $primary-color;
   color: $light-color;
 }
 
@@ -117,41 +125,58 @@ main {
   align-items: center;
 }
 
-.container-style {
-  margin: 5px 10px;
-  padding: 50px;
-  border-radius: 15px;
-
-  background: $container-color;
+.section-heading {
+  font-weight: 700;
+  padding: 0px 10px;
 }
 
-h1 {
-  font-size: 120pts;
+.container-style {
+  margin: 5px 10px;
+  padding: 25px;
+  border-radius: 15px;
+
+  background-color: $light-color;
 }
 
 /** Tasklist **/
+#add-task-button {
+  color: $primary-color;
+}
 
-//!important is used so Bootstrap colors conform to the theme of the Website
+.overflow-wrap {
+  overflow-wrap: break-word;
+}
+
 .row {
   padding: 10px 0px;
 }
 
-.btn-primary {
-  background-color: $secondary-color !important; 
-  border-color: $secondary-color !important;
+.card-row {
+  border-radius: 5px;
 }
 
-.btn-high-priority {
-  background-color: $high-priority-color;
-  border-color: $high-priority-color;
+.card-row:hover {
+  background-color: $active-color;
+  transition: background-color 100ms ease-in;
+
 }
 
-.btn-med-priority {
-  background-color: $med-priority-color;
-  border-color: $med-priority-color;
+.card-row-active {
+  background-color: $primary-color;
+  color: $light-color;
 }
 
-.btn-low-priority {
-  background-color: $low-priority-color;
-  border-color: $low-priority-color;
+.trash-icon {
+  color: $red-color;
+  opacity: 80%;
+  transition: opacity 50ms ease-in-out;
+}
+
+.trash-icon:hover {
+  opacity: 100%;
+}
+
+.card-item {
+  font-weight: 700;
+  margin: 0;
 }

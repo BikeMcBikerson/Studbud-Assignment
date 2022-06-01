@@ -43,58 +43,37 @@
     <main>
         <!-- Tasklist Creator -->
         <section id="tasklist">
-            <div class="container-fluid container-style">
+            <div class="container-fluid">
                 <div class="row">
                     <!-- Tasklist Title -->
                     <div class="col">
-                        <h1><strong><i class=" fa-regular fa-circle-check"></i> Tasklist</strong></h1>
+                        <h1 class="section-heading"><i class=" fa-regular fa-circle-check"></i> Tasklist</h1>
                     </div>
                 </div>
                 <div class="row">
                     <!-- Tasklist List -->
                     <div class="col-4">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col">
-                                    <h3>Task Name</h3>
+                        <div class="container container-style overflow-wrap" id="tasklist-list-item">
+                            <div class="row justify-content-center">
+                                <div class="col-auto">
+                                    <i class="fa-solid fa-circle-plus display-6" id="add-task-button"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- User Input Section -->
                     <div class="col-8">
-                        <form id="user-tasklist-input">
-                            <div class="container">
-                                <div class="row">
+                        <form id="user-tasklist-form">
+                            <div class="container container-style">
+                                <div class="row align-items-center justify-content-center">
 
                                     <!-- Title -->
-                                    <div class="col-auto" id="title-div">
-                                        <label for="title" class="col-form-label">
-                                            <h5>Task Name</h5>
-                                        </label>
-                                    </div>
-                                    <div class="col-auto">
-                                        <input id="title" placeholder="Title" class="form-control">
-                                    </div>
-
-                                    <!-- Priority -->
-                                    <div class="col-auto" id="priority-div">
-                                        <button class="btn btn-high-priority" type="button"
-                                            id="dropdownMenuButton1">
-                                            High
-                                        </button>
-                                        <button class="btn btn-med-priority" type="button"
-                                            id="dropdownMenuButton1">
-                                            Medium
-                                        </button>
-                                        <button class="btn btn-low-priority" type="button"
-                                            id="dropdownMenuButton1">
-                                            Low
-                                        </button>
+                                    <div class="col">
+                                        <input id="title" placeholder="Task Name" class="form-control">
                                     </div>
                                 </div>
 
-                                <div class="row">
+                                <div class="row align-items-center">
                                     <!-- Due Date -->
                                     <div class="col-auto">
                                         <label for="dueDate">
@@ -115,21 +94,43 @@
                                         <input id="estTime" type="numbers" placeholder="Minutes" class="form-control">
                                     </div>
                                 </div>
-                                <div class="row">
+
+                                <div class="row align-items-center">
                                     <div class="col-auto">
                                         <!-- Completion Status -->
                                         <div class="dropdown">
-                                            <button class="btn btn-primary dropdown-toggle" type="button"
-                                                id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                                aria-expanded="false">
-                                                Completion Status
+                                            <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                data-bs-toggle="dropdown" id="completion-button">
+                                                <span id="completion-status">Completion Status</span>
                                             </button>
-                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                <li><a class="dropdown-item" href="#">Not Started</a></li>
-                                                <li><a class="dropdown-item" href="#">Working On It</a></li>
-                                                <li><a class="dropdown-item" href="#">Completed</a></li>
+                                            <ul class="dropdown-menu" id="completion-status-menu">
+                                                <li class="dropdown-item"><span class="completion-status-item">Not Started</span></li>
+                                                <li class="dropdown-item"><span class="completion-status-item">Working On It</span></li>
+                                                <li class="dropdown-item"><span class="completion-status-item">Nearly There!</span></li>
                                             </ul>
                                         </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <!-- Priority -->
+                                        <div class="dropdown">
+                                            <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                data-bs-toggle="dropdown" id="priority-button">
+                                                <span id="priority-level">Priority Level</span>
+                                            </button>
+                                            <ul class="dropdown-menu" id="priority-status-menu">
+                                                <li class="dropdown-item"><span class="priority-level-item">HIGH</span></li>
+                                                <li class="dropdown-item"><span class="priority-level-item">MEDIUM</span></li>
+                                                <li class="dropdown-item"><span class="priority-level-item">LOW</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row align-items-right">
+                                    <div class="col">
+                                        <!-- Submit Form -->
+                                        <button class="btn btn-primary" type="button" id="submit-button">
+                                            <span>Submit</span>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -177,9 +178,6 @@
         </section>
     </main>
 
-    <!-- Main JS -->
-    <link rel="js" href="js/main.js">
-
     <!--Popper.js and Bootstrap.js-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
@@ -187,6 +185,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
+    <!-- Main JS -->
+    <script src="js/main.js"></script>
 </body>
 
 </html>
