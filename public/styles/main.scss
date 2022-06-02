@@ -13,9 +13,10 @@ $primary-color: #0d6efd;
 $secondary-color: #ebc52b;
 
 /**Miscellaneous Colors **/
-/**mainly for reference when used in main.js **/
 $red-color: #ee4463;
+$red-color-darker: #ce2f4c;
 $yellow-color: #FED148;
+$yellow-color-darker: #deb334;
 $green-color: #33d4a4;
 
 /** Font Sizes **/
@@ -139,6 +140,7 @@ main {
 }
 
 /** Tasklist **/
+
 #add-task-button {
   color: $primary-color;
 }
@@ -166,17 +168,82 @@ main {
   color: $light-color;
 }
 
-.trash-icon {
-  color: $red-color;
-  opacity: 80%;
-  transition: opacity 50ms ease-in-out;
-}
-
-.trash-icon:hover {
-  opacity: 100%;
+.display-button {
+  font-size: 0.75rem;
 }
 
 .card-item {
   font-weight: 700;
   margin: 0;
+  text-align: center;
+}
+
+.sub-info {
+  margin-top: 5px;
+}
+
+.height-control {
+  max-height: 342px; //Same height as the other column for tasklist inputs
+  overflow: auto;
+}
+
+/** Timer **/
+
+.btn-timer {
+  width: 150px;
+  height: 70px;
+  margin: 0.25rem;
+
+  color: $light-color;
+}
+
+.text-timer {
+  font-weight: 600;
+}
+
+.btn-yellow {
+  background-color: $yellow-color;
+  border-color: $yellow-color;
+}
+
+//darker hue to give impression of being pressed.
+.btn-yellow:hover {
+  background-color: $yellow-color-darker;
+  border-color: $yellow-color-darker;
+}
+
+.btn-yellow:active {
+  background-color: $yellow-color-darker;
+  border-color: $yellow-color-darker;
+}
+
+.btn-yellow:focus {
+  background-color: $yellow-color-darker;
+  border-color: $yellow-color-darker;
+}
+
+.btn-red {
+  background-color: $red-color;
+  border-color: $red-color;
+}
+
+.btn-red:hover {
+  background-color: $red-color-darker;
+  border-color: $red-color-darker;
+}
+
+.btn-red:active {
+  background-color: $red-color-darker;
+  border-color: $red-color-darker;
+}
+
+.btn-red:focus {
+  background-color: $red-color-darker;
+  border-color: $red-color-darker;
+}
+
+//Music Player - not much here tbh, just to fit the spotify embed to the website style
+.container-style-music {
+  padding: 5px 10px;
+  border-radius: 25px;
 }

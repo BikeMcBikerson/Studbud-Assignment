@@ -26,7 +26,7 @@
                 <a href="#tasklist"><i class=" fa-regular fa-circle-check"></i></a>
             </div>
             <div class="nav-item">
-                <a href="#timer"><i class=" fa-regular fa-clock"></i></a>
+                <a href="#timer"><i class="fa-solid fa-hourglass-start"></i></a>
             </div>
             <div class="nav-item">
                 <a href="#kanban"><i class=" fa-regular fa-rectangle-list"></i></a>
@@ -45,85 +45,80 @@
         <section id="tasklist">
             <div class="container-fluid">
                 <div class="row">
-                    <!-- Tasklist Title -->
-                    <div class="col">
-                        <h1 class="section-heading"><i class=" fa-regular fa-circle-check"></i> Tasklist</h1>
-                    </div>
-                </div>
-                <div class="row">
                     <!-- Tasklist List -->
-                    <div class="col-4">
-                        <div class="container container-style overflow-wrap" id="tasklist-list-item">
+                    <div class="col-5 height-control">
+                        <div class="container overflow-wrap" id="tasklist-list-item">
                             <div class="row justify-content-center">
                                 <div class="col-auto">
-                                    <i class="fa-solid fa-circle-plus display-6" id="add-task-button"></i>
+                                    <h1 class="section-heading"><i class=" fa-regular fa-circle-check"></i> Tasklist</h1>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- User Input Section -->
-                    <div class="col-8">
+                    <div class="col-7">
                         <form id="user-tasklist-form">
                             <div class="container container-style">
                                 <div class="row align-items-center justify-content-center">
-
                                     <!-- Title -->
                                     <div class="col">
                                         <input id="title" placeholder="Task Name" class="form-control">
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <!-- Due Date -->
+                                        <div class="col-auto mb-3">
+                                            <label for="dueDate">
+                                                <h5>Due Date</h5>
+                                            </label>
+                                            <input id="dueDate" type="date" class="form-control">
+                                        </div>
 
-                                <div class="row align-items-center">
-                                    <!-- Due Date -->
-                                    <div class="col-auto">
-                                        <label for="dueDate">
-                                            <h5>Due Date</h5>
-                                        </label>
-                                    </div>
-                                    <div class="col-auto">
-                                        <input id="dueDate" type="date" class="form-control">
-                                    </div>
-
-                                    <!-- Estimated Time -->
-                                    <div class="col-auto">
-                                        <label for="estTime">
-                                            <h5>Est. Time</h5>
-                                        </label>
-                                    </div>
-                                    <div class="col-auto">
-                                        <input id="estTime" type="numbers" placeholder="Minutes" class="form-control">
-                                    </div>
-                                </div>
-
-                                <div class="row align-items-center">
-                                    <div class="col-auto">
-                                        <!-- Completion Status -->
-                                        <div class="dropdown">
-                                            <button class="btn btn-secondary dropdown-toggle" type="button"
-                                                data-bs-toggle="dropdown" id="completion-button">
-                                                <span id="completion-status">Completion Status</span>
-                                            </button>
-                                            <ul class="dropdown-menu" id="completion-status-menu">
-                                                <li class="dropdown-item"><span class="completion-status-item">Not Started</span></li>
-                                                <li class="dropdown-item"><span class="completion-status-item">Working On It</span></li>
-                                                <li class="dropdown-item"><span class="completion-status-item">Nearly There!</span></li>
-                                            </ul>
+                                        <!-- Estimated Time -->
+                                        <div class="col-auto">
+                                            <label for="estTime">
+                                                <h5>Est. Time</h5>
+                                            </label>
+                                            <input id="estTime" type="numbers" placeholder="Minutes" class="form-control">
                                         </div>
                                     </div>
-                                    <div class="col-auto">
-                                        <!-- Priority -->
-                                        <div class="dropdown">
-                                            <button class="btn btn-secondary dropdown-toggle" type="button"
-                                                data-bs-toggle="dropdown" id="priority-button">
-                                                <span id="priority-level">Priority Level</span>
-                                            </button>
-                                            <ul class="dropdown-menu" id="priority-status-menu">
-                                                <li class="dropdown-item"><span class="priority-level-item">HIGH</span></li>
-                                                <li class="dropdown-item"><span class="priority-level-item">MEDIUM</span></li>
-                                                <li class="dropdown-item"><span class="priority-level-item">LOW</span></li>
-                                            </ul>
+                                    <div class="col-6">
+                                        <div class="col-auto mb-3">
+                                            <!-- Completion Status -->
+                                            <label for="completion-status">
+                                                <h5>Completion Status</h5>
+                                            </label>
+                                            <div class="dropdown">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                    data-bs-toggle="dropdown" id="completion-button">
+                                                    <span id="completion-status">Completion Status</span>
+                                                </button>
+                                                <ul class="dropdown-menu" id="completion-status-menu">
+                                                    <li class="dropdown-item"><span class="completion-status-item">Not Started</span></li>
+                                                    <li class="dropdown-item"><span class="completion-status-item">Working On It</span></li>
+                                                    <li class="dropdown-item"><span class="completion-status-item">Nearly There!</span></li>
+                                                </ul>
+                                            </div>
                                         </div>
-                                    </div>
+                                        <div class="col-auto">
+                                            <!-- Priority -->
+                                            <label for="priority-level">
+                                                <h5>Priority Level</h5>
+                                            </label>
+                                            <div class="dropdown">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                    data-bs-toggle="dropdown" id="priority-button">
+                                                    <span id="priority-level">Priority Level</span>
+                                                </button>
+                                                <ul class="dropdown-menu" id="priority-status-menu">
+                                                    <li class="dropdown-item"><span class="priority-level-item">HIGH</span></li>
+                                                    <li class="dropdown-item"><span class="priority-level-item">MEDIUM</span></li>
+                                                    <li class="dropdown-item"><span class="priority-level-item">LOW</span></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>                                   
                                 </div>
                                 <div class="row align-items-right">
                                     <div class="col">
@@ -143,22 +138,38 @@
         <!-- Timer -->
         <section id="timer">
             <div class="container-fluid container-style">
-                <form>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
-                    </div>
-                    <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+                <div class="row">
+                    <div class="col-3 flex-row">
+                        <div>
+                            <button class="btn-timer btn btn-primary" type="button" id="start-button">
+                                <span class="text-timer h4"><i class="fa-solid fa-circle-play"></i> START</span>
+                            </button>
+                        </div>
+                        <div>
+                            <button class="btn-timer btn-yellow btn btn-primary" type="button" id="pause-button">
+                                <span class="text-timer h4"><i class="fa-solid fa-circle-pause"></i> PAUSE</span>
+                            </button>
+                        </div>
+                        <div>
+                            <button class="btn-timer btn-red btn btn-primary" type="button" id="reset-button">
+                                <span class="text-timer h4"><i class="fa-solid fa-circle-stop"></i> RESET</span>
+                            </button>
+                        </div>                                                
+                    </div>   
+                    <div class="col-9" id="timer-display">
+                        <div class="row align-content-center py-5">
+                            <div class="col-auto mx-3">
+                                <h2><span id="hours" class="text-timer display-1">0</span> Hours </h2>
+                            </div>
+                            <div class="col-auto mx-3">
+                                <h2><span id="minutes" class="text-timer display-1">0</span> Minutes</h2>
+                            </div>
+                            <div class="col-auto mx-3">
+                                <h2><span id="seconds" class="text-timer display-1">0</span> Seconds</h2>
+                            </div>                         
+                        </div>                                             
+                    </div>                          
+                </div>               
             </div>
         </section>
 
@@ -174,7 +185,7 @@
 
         <!-- Music Player -->
         <section id="music-player">
-            <div class="container-fluid container-style">Timer</div>
+            <iframe class="container-style-music" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX9sIqqvKsjG8?utm_source=generator&theme=0" width="100%" height="300" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
         </section>
     </main>
 
