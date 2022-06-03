@@ -155,12 +155,11 @@ main {
 
 .card-row {
   border-radius: 5px;
+  transition: background-color 100ms ease-in;
 }
 
 .card-row:hover {
   background-color: $active-color;
-  transition: background-color 100ms ease-in;
-
 }
 
 .card-row-active {
@@ -240,6 +239,66 @@ main {
 .btn-red:focus {
   background-color: $red-color-darker;
   border-color: $red-color-darker;
+}
+
+.pomodoro-no-state {
+  color: $bg-color; //I used this for Greyed out effect
+}
+
+.pomodoro-work {
+  color: $green-color;
+}
+
+.pomodoro-rest {
+  color: $yellow-color;
+}
+
+.pomodoro-long-rest {
+  color: $red-color;
+}
+
+/** Kanban **/
+
+#to-do {
+  font-weight: 700;
+  padding: 0px 10px;
+  background-color: $red-color;
+  border-radius: 5px;
+}
+
+#in-progress {
+  font-weight: 700;
+  padding: 0px 10px;
+  background-color: $yellow-color;
+  border-radius: 5px;
+}
+
+#completed {
+  font-weight: 700;
+  padding: 0px 10px;
+  background-color: $green-color;
+  border-radius: 5px;
+}
+
+.kanban-heading {
+  font-weight: 700;
+  color: $light-color;
+}
+
+.kanban-board {
+  min-height: 10rem;
+  background-color: $active-color;
+}
+
+.kanban-container {
+  background-color: $active-color;
+  
+  padding: 15px;
+}
+
+.kanban-container:hover {
+  cursor: grab;
+  background-color: hsla(0, 0%, 10%, 10%); //Didn't want to use a $ because its a one-off color
 }
 
 //Music Player - not much here tbh, just to fit the spotify embed to the website style

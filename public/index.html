@@ -138,36 +138,53 @@
         <!-- Timer -->
         <section id="timer">
             <div class="container-fluid container-style">
-                <div class="row">
-                    <div class="col-3 flex-row">
+                <div class="row align-items-center">
+                    <!-- Timer Buttons -->
+                    <div class="col-2">
                         <div>
+                             <!-- Start Timer -->
                             <button class="btn-timer btn btn-primary" type="button" id="start-button">
                                 <span class="text-timer h4"><i class="fa-solid fa-circle-play"></i> START</span>
                             </button>
                         </div>
                         <div>
+                             <!-- Pause Timer -->
                             <button class="btn-timer btn-yellow btn btn-primary" type="button" id="pause-button">
                                 <span class="text-timer h4"><i class="fa-solid fa-circle-pause"></i> PAUSE</span>
                             </button>
                         </div>
                         <div>
+                             <!-- Reset Timer -->
                             <button class="btn-timer btn-red btn btn-primary" type="button" id="reset-button">
                                 <span class="text-timer h4"><i class="fa-solid fa-circle-stop"></i> RESET</span>
                             </button>
-                        </div>                                                
-                    </div>   
-                    <div class="col-9" id="timer-display">
-                        <div class="row align-content-center py-5">
-                            <div class="col-auto mx-3">
+                        </div>   
+                        <div>
+                             <!-- Pomodoro Timer -->
+                            <button class="btn-timer btn btn-secondary" type="button" id="pomodoro-button">
+                                <span class="text-timer p"><i class="fa-solid fa-stopwatch"></i> POMODORO</span>
+                            </button>
+                        </div>                                              
+                    </div> 
+                    <!-- Timer Display-->
+                    <div class="col-10" id="timer-display">
+                        <div class="row py-5 justify-content-center">
+                            <div class="col-auto mx-4">
                                 <h2><span id="hours" class="text-timer display-1">0</span> Hours </h2>
                             </div>
-                            <div class="col-auto mx-3">
+                            <div class="col-auto mx-4">
                                 <h2><span id="minutes" class="text-timer display-1">0</span> Minutes</h2>
                             </div>
-                            <div class="col-auto mx-3">
+                            <div class="col-auto mx-4">
                                 <h2><span id="seconds" class="text-timer display-1">0</span> Seconds</h2>
                             </div>                         
-                        </div>                                             
+                        </div>      
+                        <!-- Pomodoro Text -->
+                        <div class="row justify-content-center">
+                            <div class="col-auto">
+                                <span class="h3 pomodoro-no-state text-timer" id="pomodoro-text">No Time State</span>           
+                            </div>
+                        </div>                                        
                     </div>                          
                 </div>               
             </div>
@@ -175,12 +192,60 @@
 
         <!-- Kanban Board -->
         <section id="kanban">
-            <div class="container-fluid container-style">Timer</div>
+            <div class="container-fluid container-style">
+                <div class="row justify-content-center">
+                    <div class="col-auto">
+                        <h1 class="section-heading">Kanban Board</h1>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-4">
+                        <div class="row justify-content-center py-2" id="to-do">
+                            <div class="col-auto">
+                                <span class="h2 kanban-heading">
+                                    To do
+                                </span> <!-- Reusing elements to save time, I know the classes should've been clearer -->
+                            </div>
+                        </div>
+                        <div class="row kanban-board justify-content-center" id="low-completion">
+
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="row justify-content-center py-2" id="in-progress">
+                            <div class="col-auto">
+                                <span class="h2 kanban-heading">
+                                    In Progress
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row kanban-board justify-content-center" id="med-completion">
+
+                        </div>             
+                    </div>
+                    <div class="col-4">
+                        <div class="row justify-content-center py-2" id="completed">
+                            <div class="col-auto">
+                                <span class="h2 kanban-heading">
+                                    Completed
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row kanban-board justify-content-center" id="high-completion">
+
+                        </div>                 
+                    </div>
+                </div>                
+            </div>
         </section>
 
         <!-- Reading List -->
         <section id="reading-list">
-            <div class="container-fluid container-style">Timer</div>
+            <div class="container-fluid container-style">
+                <div class="row">
+
+                </div>
+            </div>
         </section>
 
         <!-- Music Player -->
