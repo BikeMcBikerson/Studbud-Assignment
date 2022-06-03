@@ -1,7 +1,16 @@
-//Load necessary functions from the beginning
-window.addEventListener("DOMContentLoaded", () => {
+//#####################################
+//  CONTENTS
+//  
+//  LINE 14 - TASKLIST
+//  LINE 230 - TIMER
+//  LINE 395 - KANBAN
+//  LINE 460 - DICTIONARY
+//
+//#####################################
 
-});
+
+
+
 //#####################################
 //  TASKLIST JAVASCRIPT
 //#####################################
