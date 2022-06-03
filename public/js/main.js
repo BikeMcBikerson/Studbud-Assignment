@@ -119,9 +119,24 @@ function createNewTask() {
     cardRow = document.createElement('div');
     cardRow.setAttribute('id', `row-${taskList.length - 1}`); //gives dynamic ID to each new task card made
     cardRow.classList.add('row', 'flex-row', 'card-row', 'justify-content-center');
-    cardRow.addEventListener('click', this.remove) //Add Delete ability to all tasks
-
+    cardRow.addEventListener('click', confirmDelete) //Add Delete ability to all tasks
     initialRow.appendChild(cardRow);
+
+    function confirmDelete (){
+        let deleteBoolean = confirm('Are you sure you want to Delete this Card?');
+        switch (deleteBoolean) {
+            case true: //If yes, then delete the card
+                initialRow.removeChild(this);
+                break;
+            case false: //if not, nothing happens
+                break;
+            default:
+                alert('ERROR')
+                break;
+        }
+    }
+
+
 
     //Puts Title in the tasklist
     cardTitle = document.createElement('span');
@@ -374,27 +389,40 @@ pomodoroButton.addEventListener('click', timerPomodoro); //When Pomodoro button 
 let kanbanCard; //this element will be our Kanban Card, we can change it however we like without affecting the tasklist
 let toDo = document.getElementById('low-completion');
 let inProgress = document.getElementById('med-completion');
+let completed = document.getElementById('high-completion');
 
 function createKanbanCard(){
     kanbanCard = cardRow.cloneNode(true); //Copies the content of the tasklist items, pretty neat!
     kanbanCard.setAttribute('id', `kanban-${taskList.length - 1}`); //gives new ID to cloned content, allows it to be called separately from the tasklist item.
     kanbanCard.classList.add('kanban-container');
-    
-    switch (completionStatusDisplay.textContent) {
-        case 'Not Started': //Not Started -> 'To do' section
-            toDo.appendChild(kanbanCard)
-            break;
-        case 'Working On It': //Working on it-> 'In Progress' section, note nothing for 'Completed' section as all tasks are not done yet.
-        case 'Nearly There!':
-            inProgress.appendChild(kanbanCard)
-            break;
-        default:
-            alert("ERROR");
-            break;
-    };
+
+    kanbanCard.addEventListener('click', confirmDeleteKanban) //Add Delete ability to all tasks
+
+    function confirmDeleteKanban (){
+        let deleteBoolean = confirm('Are you sure you want to Delete this Card?');
+        switch (deleteBoolean) {
+            case true: //If yes, then delete the card
+                if( this.parentNode = toDo ){
+                    toDo.removeChild(this);
+                }
+                else if( this.parentNode = inProgress ){
+                    inProgress.removeChild(this);
+                }
+                else if( this.parentNode = completed ){
+                    completed.removeChild(this);
+                }
+                break;
+            case false: //if not, nothing happens
+                break;
+            default:
+                alert('ERROR')
+                break;
+        }
+    }    
     //Drag and Drop functionality of the Card
     //Got some help from: https://www.youtube.com/watch?v=OHTudicK7nY
 
+    //To apply the dragstart event listender to all kanban cards, allows all items to be moved instead of just the one with the latest ID.
     for (const dragSelector of document.querySelectorAll('.kanban-container')) {
         dragSelector.addEventListener('dragstart', e => {
             e.dataTransfer.setData('text/plain', dragSelector.id);
@@ -420,5 +448,29 @@ function createKanbanCard(){
     };
 };
 
+//#####################################
+//  DICTIONARY JAVASCRIPT
+//#####################################
+let phonetic = document.getElementById('phonetic');
+let definitions = document.getElementById('definition');
+let synonyms = document.getElementById('synonyms');
+let searchDef = document.getElementById('search-def');
+let dictionaryInfo;
 
+searchDef.addEventListener('click', wordLookup)
+
+//Had some help from here: https://www.youtube.com/watch?v=RG-weA9HUrg
+
+function wordLookup() {
+    const request = new XMLHttpRequest();
+    request.open('GET',`https://api.dictionaryapi.dev/api/v2/entries/en/${document.getElementById('word-input').value}`);
+    request.send();
+    request.onload = () => {
+        dictionaryInfo = JSON.parse(request.response);
+        phonetic.textContent = dictionaryInfo[0].phonetic;
+        definitions.textContent = dictionaryInfo[0].meanings[0].definitions[0].definition;
+        synonyms.textContent = dictionaryInfo[0].meanings[0].synonyms;
+    
+    }
+}
 

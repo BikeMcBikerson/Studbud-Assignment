@@ -32,7 +32,7 @@
                 <a href="#kanban"><i class=" fa-regular fa-rectangle-list"></i></a>
             </div>
             <div class="nav-item">
-                <a href="#reading-list"><i class=" fa-regular fa-bookmark"></i></a>
+                <a href="#dictionary"><i class=" fa-regular fa-bookmark"></i></a>
             </div>
             <div class="nav-item">
                 <a href="#music-player"><i class=" fa-regular fa-circle-play"></i></a>
@@ -239,12 +239,31 @@
             </div>
         </section>
 
-        <!-- Reading List -->
-        <section id="reading-list">
+        <!-- Dictionary -->
+        <section id="dictionary">
             <div class="container-fluid container-style">
-                <div class="row">
+                <div class="row flex-column">
+                    <div class="row flex-row align-items-center">
+                        <div class="col-auto">
+                            <input id="word-input" class="form-control" type="text" placeholder="Enter a Word Here!"></input>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-primary" id="search-def">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>                         
+                        </div>
 
-                </div>
+                    </div>       
+                    <div class="col-auto">
+                        <i><p id="phonetic"></p></i>
+                    </div>                                                
+                    <div class="col-auto">
+                        <b><p id="definition"></p></b>
+                    </div>
+                    <div class="col-auto">
+                        <p id="synonyms"></p>
+                    </div>                                        
+                </div>                          
             </div>
         </section>
 
